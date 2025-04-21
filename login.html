@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng nhập hệ thống</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --blue-light: #e0f0ff;
+      --blue-dark: #004d80;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+    }
+
+    body {
+      background: url('') center/cover no-repeat; /* Thêm ảnh nền vào đây nếu muốn */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--blue-light);
+      position: relative;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #00395f;
+    }
+
+    .login-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .login-box h2 {
+      margin-bottom: 25px;
+      color: var(--blue-dark);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--blue-dark);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-login:hover {
+      background-color: #00395f;
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        padding: 30px 20px;
+      }
+
+      .btn-back {
+        font-size: 13px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nút quay về -->
+  <a href="homepage.html" class="btn-back">← Quay về trang chủ</a>
+
+  <!-- Hộp đăng nhập -->
+  <div class="login-box">
+    <h2>Đăng nhập hệ thống</h2>
+    <form action="signupcourse.html" method="get">
+      <div class="form-group">
+        <label for="username">Tài khoản</label>
+        <input type="text" id="username" name="username" placeholder="Nhập tài khoản" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mật khẩu</label>
+        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required>
+      </div>
+      <button type="submit" class="btn-login">Đăng nhập</button>
+    </form>
+  </div>
+</body>
+</html>

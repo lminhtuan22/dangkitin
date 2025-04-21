@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Đăng ký học phần</title>
+  <style>
+    :root {
+      --blue: #d0e8ff;
+      --white: #ffffff;
+      --dark-blue: #004d80;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--blue);
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: var(--dark-blue);
+    }
+
+    .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .box {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .box h2 {
+      margin-bottom: 15px;
+      color: var(--dark-blue);
+    }
+
+    .course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .course-list li {
+      margin-bottom: 10px;
+    }
+
+    .btn-submit {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: var(--dark-blue);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .summary {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+
+    body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://congchungnguyenhue.com/Uploaded/Images/Original/2023/10/27/neu_2710105005.jpg') center/cover no-repeat;
+    margin: 0;
+    padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 Đăng ký học phần</h1>
+    <a href="homepage.html" class="btn-back">← Quay về trang chủ</a>
+  </header>
+
+  <div class="container">
+    <!-- Danh sách học phần -->
+    <div class="box">
+      <h2>Danh sách học phần</h2>
+      <form action="#" method="post">
+        <ul class="course-list">
+          <li>
+            <label><input type="checkbox" name="course" value="IT101"> Cơ sở dữ liệu (3 tín chỉ)</label>
+          </li>
+          <li>
+            <label><input type="checkbox" name="course" value="IT202"> Lập trình Web (3 tín chỉ)</label>
+          </li>
+          <li>
+            <label><input type="checkbox" name="course" value="MA101"> Toán rời rạc (3 tín chỉ)</label>
+          </li>
+          <li>
+            <label><input type="checkbox" name="course" value="IT301"> CTDL & Giải thuật (4 tín chỉ)</label>
+          </li>
+          <li>
+            <label><input type="checkbox" name="course" value="EN201"> Tiếng Anh học thuật (2 tín chỉ)</label>
+          </li>
+        </ul>
+        <button type="submit" class="btn-submit" onclick="alert('Đăng ký thành công!')">Đăng ký</button>
+      </form>
+    </div>
+
+    <!-- Lịch sử đăng ký -->
+    <div class="box">
+      <h2>Học phần đã đăng ký</h2>
+      <ul class="course-list">
+        <li>❇️ Cơ sở dữ liệu (3 tín chỉ)</li>
+        <li>❇️ Lập trình Web (3 tín chỉ)</li>
+        <li>❇️ Toán rời rạc (3 tín chỉ)</li>
+      </ul>
+      <div class="summary">
+        Tổng số học phần: 3 | Tổng tín chỉ: 9
+      </div>
+    </div>
+  </div>
+</body>
+</html>

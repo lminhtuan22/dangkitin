@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông báo Đăng ký Tín chỉ</title>
+    <style>
+        :root {
+            --blue: #d0e8ff;
+            --white: #ffffff;
+            --dark-blue: #004d80;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--blue);
+            color: var(--dark-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .notification-box {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 77, 128, 0.2);
+            max-width: 600px;
+            text-align: center;
+            animation: slideUp 0.8s ease;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #003359;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .notification-box {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-box">
+        <h1>📢 Thông báo Đăng ký Tín chỉ</h1>
+        <p>Thời gian đăng ký tín chỉ học kỳ I năm học 2025-2026 sẽ bắt đầu từ:</p>
+        <p><strong>08:00 sáng ngày 20/05/2025</strong> đến <strong>23:59 ngày 25/05/2025</strong>.</p>
+        <p>Vui lòng truy cập cổng đăng ký đúng giờ để đảm bảo quyền lợi học tập của bạn.</p>
+        <a href="homepage.html" class="btn-back">Quay về trang chính</a>
+    </div>
+</body>
+</html>

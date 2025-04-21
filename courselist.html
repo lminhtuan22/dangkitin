@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danh sách Môn học</title>
+  <style>
+    :root {
+      --blue: #d0e8ff;
+      --white: #ffffff;
+      --dark-blue: #004d80;
+      --light-shadow: rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--blue);
+      color: var(--dark-blue);
+      padding: 40px 20px;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+    }
+
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .course-card {
+      background-color: var(--white);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px var(--light-shadow);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .course-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--dark-blue);
+    }
+
+    .course-info {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.4;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+    .back{
+      text-align: center;
+      margin-top: 40px;
+    }
+    .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+  </style>
+</head>
+<body>
+  <h1>📚 Danh sách Môn học</h1>
+  <div class="course-list">
+    <div class="course-card">
+      <div class="course-title">Bóng Chuyền</div>
+      <div class="course-info">
+        Mã môn: IT101<br>
+        Số tín chỉ: 3<br>
+        Giảng viên: ThS. Nguyễn Văn A
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-title">Bóng đá</div>
+      <div class="course-info">
+        Mã môn: IT202<br>
+        Số tín chỉ: 3<br>
+        Giảng viên: ThS. Trần Thị B
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-title">Karate</div>
+      <div class="course-info">
+        Mã môn: IT103<br>
+        Số tín chỉ: 4<br>
+        Giảng viên: TS. Phạm Văn C
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-title">Bóng rổ</div>
+      <div class="course-info">
+        Mã môn: MA101<br>
+        Số tín chỉ: 3<br>
+        Giảng viên: TS. Lê Thị D
+      </div>
+    </div>
+
+    <div class="course-card">
+        <div class="course-title">Khiêu vũ</div>
+        <div class="course-info">
+          Mã môn: MA101<br>
+          Số tín chỉ: 3<br>
+          Giảng viên: TS. Lê Thị D
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-title">Cờ vua</div>
+        <div class="course-info">
+          Mã môn: MA101<br>
+          Số tín chỉ: 3<br>
+          Giảng viên: TS. Lê Thị D
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-title">Cầu lông</div>
+        <div class="course-info">
+          Mã môn: MA101<br>
+          Số tín chỉ: 3<br>
+          Giảng viên: TS. Lê Thị D
+        </div>
+      </div>
+    
+      <div class="course-card">
+        <div class="course-title">LMHT</div>
+        <div class="course-info">
+          Mã môn: MA101<br>
+          Số tín chỉ: 3<br>
+          Giảng viên: TS. Lê Thị D
+        </div>
+      </div>
+
+    <div class="course-card">
+      <div class="course-title">Valorant</div>
+      <div class="course-info">
+        Mã môn: IT301<br>
+        Số tín chỉ: 4<br>
+        Giảng viên: TS. Hoàng Văn E
+      </div>
+    </div>
+  </div>
+  <div class="back">
+    <a href="homepage.html" class="btn-back">Quay về trang chính</a>
+  </div>
+</body>
+</html>

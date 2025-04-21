@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Đăng Ký Tín Chỉ - Đại Học Kinh Tế Quốc Dân</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Thay thế bằng logo thật của bạn -->
+                    <img src="https://inkythuatso.com/uploads/images/2021/11/logo-neu-inkythuatso-01-09-09-40-17.jpg" alt="Logo Đại học">
+                    <div class="logo-text">HỆ THỐNG ĐĂNG KÝ TÍN CHỈ</div>
+                </div>
+                <button class="nav-toggle" id="navToggle">☰</button>
+                <div class="nav" id="mainNav">
+                    <ul class="nav-links">
+                        <li><a href="homepage.html" class="active">Trang chủ</a></li>
+                        <li><a href="noti.html">Lịch đăng ký</a></li>
+                        <li><a href="courselist.html">Danh sách môn học</a></li>
+                        <li><a href="#">Hướng dẫn</a></li>
+                        <li><a href="#">Hỗ trợ</a></li>
+                    </ul>
+                    <div class="user-actions">
+                        <button class="btn">Đăng nhập</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-fadeIn">
+                    <h1 class="hero-title">Đăng Ký Học Phần Học Kỳ 2 Năm 2024-2025</h1>
+                    <p class="hero-subtitle">Hệ thống đăng ký trực tuyến giúp sinh viên lựa chọn và đăng ký học phần một cách nhanh chóng, chính xác và thuận tiện.</p>
+                    <div class="hero-buttons">
+                        <a href="login.html" class="btn-primary">Đăng Ký Ngay</a>
+                        <a href="#" class="btn-secondary">Xem Hướng Dẫn</a>
+                    </div>
+                </div>
+                <div class="hero-image animate-fadeIn" style="animation-delay: 0.3s;">
+                    <!-- Đây là nơi chèn ảnh hero, hãy thay thế bằng ảnh thật -->
+                    <img src="https://neulink.edu.vn/images_upload/small_986.png" alt="Sinh viên đăng ký tín chỉ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Tính Năng Nổi Bật</h2>
+            <div class="features-grid">
+                <div class="feature-card animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="feature-icon">📅</div>
+                    <h3 class="feature-title">Đăng Ký Trực Tuyến</h3>
+                    <p class="feature-desc">Đăng ký học phần mọi lúc mọi nơi trên mọi thiết bị mà không cần phải đến trường.</p>
+                </div>
+                <div class="feature-card animate-fadeIn" style="animation-delay: 0.6s;">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Theo Dõi Tiến Độ</h3>
+                    <p class="feature-desc">Kiểm tra tiến độ học tập, xem lịch học, lịch thi và theo dõi kết quả học tập một cách dễ dàng.</p>
+                </div>
+                <div class="feature-card animate-fadeIn" style="animation-delay: 0.8s;">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Tương Thích Đa Thiết Bị</h3>
+                    <p class="feature-desc">Sử dụng trên máy tính, điện thoại hoặc máy tính bảng với trải nghiệm tốt nhất.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration">
+        <div class="container">
+            <h2 class="section-title">Đăng Ký Học Phần</h2>
+            <div class="registration-content">
+                <div class="registration-steps">
+                    <div class="step animate-fadeIn" style="animation-delay: 0.4s;">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Đăng Nhập Hệ Thống</h3>
+                            <p class="step-desc">Sử dụng mã số sinh viên và mật khẩu đã được cấp để đăng nhập vào hệ thống.</p>
+                        </div>
+                    </div>
+                    <div class="step animate-fadeIn" style="animation-delay: 0.6s;">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Chọn Học Phần</h3>
+                            <p class="step-desc">Tìm kiếm và chọn các học phần phù hợp với chương trình học và lịch học của bạn.</p>
+                        </div>
+                    </div>
+                    <div class="step animate-fadeIn" style="animation-delay: 0.8s;">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Xác Nhận Đăng Ký</h3>
+                            <p class="step-desc">Kiểm tra thông tin và xác nhận đăng ký học phần, sau đó thanh toán học phí nếu cần.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-form animate-fadeIn" style="animation-delay: 1s;">
+                    <form action="signupcourse.html" method="get">
+                        <div class="form-group">
+                            <label for="studentId" class="form-label">Mã Số Sinh Viên</label>
+                            <input type="text" id="studentId" class="form-control" placeholder="Nhập mã số sinh viên" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Mật Khẩu</label>
+                            <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="semester" class="form-label">Học Kỳ</label>
+                            <select id="semester" class="form-select">
+                                <option value="20242">Học kỳ 2 năm 2024-2025</option>
+                                <option value="20241">Học kỳ 1 năm 2024-2025</option>
+                                <option value="20232">Học kỳ 2 năm 2023-2024</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;">Đăng Nhập</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="container">
+            <h2 class="section-title">Tin Tức & Thông Báo</h2>
+            <div class="news-grid">
+                <div class="news-card animate-fadeIn" style="animation-delay: 0.4s;">
+                    <div class="news-image">
+                        <!-- Thay thế bằng hình ảnh thật -->
+                        <img src="https://xdcs.cdnchinhphu.vn/zoom/600_315/446259493575335936/2024/8/17/a4-172389588796937021946-0-0-562-899-crop-17238958907171418955268.jpg" alt="Thông báo đăng ký">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">20/04/2025</div>
+                        <h3 class="news-title">Thông Báo Lịch Đăng Ký Học Kỳ 2 Năm 2024-2025</h3>
+                        <p class="news-excerpt">Hệ thống đăng ký học phần học kỳ 2 năm học 2024-2025 sẽ bắt đầu từ ngày 25/04/2025. Sinh viên vui lòng kiểm tra thời gian đăng ký theo khoa.</p>
+                        <a href="#" class="news-link">Xem chi tiết <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="news-card animate-fadeIn" style="animation-delay: 0.6s;">
+                    <div class="news-image">
+                        <!-- Thay thế bằng hình ảnh thật -->
+                        <img src="https://vcdn1-vnexpress.vnecdn.net/2023/12/28/331930876-1188584182020531-359-6664-9540-1703756382.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=F9WvZCebudEDgXN18qthyw" alt="Hướng dẫn đăng ký">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">18/04/2025</div>
+                        <h3 class="news-title">Hướng Dẫn Đăng Ký Học Phần Trực Tuyến</h3>
+                        <p class="news-excerpt">Phòng Đào tạo đã cập nhật hướng dẫn chi tiết về quy trình đăng ký học phần trực tuyến. Sinh viên vui lòng đọc kỹ trước khi thực hiện.</p>
+                        <a href="#" class="news-link">Xem chi tiết <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+                <div class="news-card animate-fadeIn" style="animation-delay: 0.8s;">
+                    <div class="news-image">
+                        <!-- Thay thế bằng hình ảnh thật -->
+                        <img src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/hoc_phi_neu_e64f3903f0.jpg" alt="Học phí">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-date">15/04/2025</div>
+                        <h3 class="news-title">Thông Báo Về Học Phí Học Kỳ 2 Năm 2024-2025</h3>
+                        <p class="news-excerpt">Phòng Tài chính - Kế toán thông báo về mức học phí và hạn thanh toán học phí học kỳ 2 năm học 2024-2025.</p>
+                        <a href="#" class="news-link">Xem chi tiết <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorial Section -->
+    <section class="features" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title">Hướng Dẫn Sử Dụng</h2>
+            <div style="text-align: center;">
+                <!-- Đây là vị trí đặt video hướng dẫn - hãy thay thế bằng thẻ video thật -->
+                <div style="max-width: 800px; margin: 0 auto; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                    <!-- Đây là vị trí chèn video, bạn có thể thay thế sau -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/NEU-cong_trinh_toa_nha_the_ky.jpg/1200px-NEU-cong_trinh_toa_nha_the_ky.jpg" alt="Video hướng dẫn" style="width: 100%; height: auto;">
+                    <!-- Chú thích: Thay thế hình ảnh này bằng thẻ video hoặc iframe khi có video thật -->
+                </div>
+                <p style="margin-top: 1rem; color: var(--gray-text);">Video hướng dẫn đang được cập nhật trong thời gian tới</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Về Chúng Tôi</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem;">Hệ thống đăng ký tín chỉ trực tuyến của Đại học Việt Nam, giúp sinh viên dễ dàng đăng ký học phần một cách nhanh chóng và thuận tiện.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">yt</a>
+                        <a href="#" class="social-link">tw</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Lịch đăng ký</a></li>
+                        <li><a href="#">Danh sách môn học</a></li>
+                        <li><a href="#">Tra cứu học phí</a></li>
+                        <li><a href="#">Hỏi đáp thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Hỗ Trợ Sinh Viên</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hướng dẫn đăng ký</a></li>
+                        <li><a href="#">Quy chế đào tạo</a></li>
+                        <li><a href="#">Quy định học vụ</a></li>
+                        <li><a href="#">Hỗ trợ kỹ thuật</a></li>
+                        <li><a href="#">Liên hệ phòng đào tạo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Hệ</h3>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Địa chỉ: 207 Giải Phóng, Đồng Tâm, Quận Hai Bà Trưng, Hà Nội, Việt Nam</p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Email: dhktqd@neu.edu.vn</p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Điện thoại: (84)24.38.695.992</p>
+                    <p style="color: #ccc;">Hotline: (84)24.36.280.280</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hệ Thống Đăng Ký Tín Chỉ - Đại Học Kinh Tế Quốc Dân. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeIn');
+            
+            function checkIfInView() {
+                const windowHeight = window.innerHeight;
+                const windowTopPosition = window.scrollY;
+                const windowBottomPosition = (windowTopPosition + windowHeight);
+                
+                animatedElements.forEach(function(element) {
+                    const elementHeight = element.offsetHeight;
+                    const elementTopPosition = element.getBoundingClientRect().top + windowTopPosition;
+                    const elementBottomPosition = (elementTopPosition + elementHeight);
+                    
+                    // Check if element is in view
+                    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            }
+            
+            // Set initial state
+            animatedElements.forEach(function(element) {
+                element.style.opacity = 0;
+                element.style.animationPlayState = 'paused';
+            });
+            
+            // Check on load
+            checkIfInView();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkIfInView);
+        });
+    </script>
+</body>
+</html>
