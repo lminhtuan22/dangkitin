@@ -101,10 +101,17 @@ body {
 }
 
 .user-actions {
-    display: flex;
-    align-items: center;
-    margin-left: 2rem;
+    display: inline-block;
+    margin-left: 1rem;
+    border-radius: 8px;
+    padding: 8px 12px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
+
 
 .btn {
     background-color: #fff;
