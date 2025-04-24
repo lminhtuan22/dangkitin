@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Đăng nhập hệ thống</title>
+  <title>Tín chỉ NEU</title>
   <style>
     :root {
       --white: #ffffff;
@@ -19,12 +19,29 @@
     }
 
     body {
-      background: url('/baigk/thu_vien_1.jpg.webp') center/cover no-repeat; /* Thêm ảnh nền vào đây nếu muốn */
+      background: url('/baigk/15-1502881726137.png.webp') center/cover no-repeat; /* Thêm ảnh nền vào đây nếu muốn */
       display: flex;
       justify-content: center;
       align-items: center;
       background-color: var(--blue-light);
       position: relative;
+    }
+
+    .btn-back {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #00395f;
     }
 
     .login-box {
@@ -84,18 +101,26 @@
       .login-box {
         padding: 30px 20px;
       }
+
+      .btn-back {
+        font-size: 13px;
+        padding: 6px 12px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Nút quay về -->
+  <a href="homepage.html" class="btn-back">← Quay về trang chủ</a>
+
   <!-- Hộp đăng nhập -->
   <div class="login-box">
-    <h2>Đăng nhập hệ thống</h2>
-    <form action="homepage.html" method="get">
+    <h2>Đăng ký học phần</h2>
+    <form action="signupcourse.html" method="get">
       <div class="form-group">
-        <label for="username">Tài khoản</label>
-        <input type="text" id="username" name="username" placeholder="Nhập tài khoản" required>
+        <label for="username">Mã Số Sinh Viên</label>
+        <input type="text" id="username" name="username" placeholder="Nhập mã sinh viên" required>
       </div>
       <div class="form-group">
         <label for="password">Mật khẩu</label>
