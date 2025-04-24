@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ Trợ - Hệ Thống Đăng Ký Tín Chỉ - Đại Học Kinh Tế Quốc Dân</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Bổ sung CSS cho trang hỗ trợ */
+        .support-section {
+            padding: 40px 0;
+        }
+        
+        .support-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info .icon {
+            margin-right: 15px;
+            font-size: 20px;
+            color: #1a73e8;
+            min-width: 25px;
+            text-align: center;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #3b5998;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-right: 10px;
+            transition: opacity 0.3s;
+        }
+        
+        .social-link:hover {
+            opacity: 0.9;
+        }
+        
+        .social-link .icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .comments-section {
+            margin-top: 30px;
+        }
+        
+        .comment-form {
+            margin-bottom: 30px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #1557b0;
+        }
+        
+        .comment {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+        
+        .comment-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #1a73e8;
+        }
+        
+        .comment-time {
+            color: #999;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        .comment-text {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .comment-action {
+            color: #777;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        .comment-action:hover {
+            color: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://inkythuatso.com/uploads/images/2021/11/logo-neu-inkythuatso-01-09-09-40-17.jpg" alt="Logo Đại học">
+                    <div class="logo-text">HỆ THỐNG ĐĂNG KÝ TÍN CHỈ</div>
+                </div>
+                <button class="nav-toggle" id="navToggle">☰</button>
+                <div class="nav" id="mainNav">
+                    <ul class="nav-links">
+                        <li><a href="homepage.html">Trang chủ</a></li>
+                        <li><a href="noti.html">Lịch đăng ký</a></li>
+                        <li><a href="courselist.html">Danh sách môn học</a></li>
+                        <li><a href="tutorial.html">Hướng dẫn</a></li>
+                        <li><a href="support.html" class="active">Hỗ trợ</a></li>
+                    </ul>
+                    <div>
+                        <a class="user-actions" href="login.html">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Support Banner -->
+    <section class="hero" style="padding: 30px 0;">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text animate-fadeIn">
+                    <h1 class="hero-title">Hỗ Trợ Sinh Viên</h1>
+                    <p class="hero-subtitle">Liên hệ với chúng tôi để được hỗ trợ về hệ thống đăng ký tín chỉ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="support-section">
+        <div class="container">
+            <div class="support-card animate-fadeIn">
+                <h2 class="section-title">Thông Tin Liên Hệ</h2>
+                <div class="contact-info">
+                    <p><span class="icon">✉️</span> <strong>Email hỗ trợ:</strong> hotro.tinchi@neu.edu.vn</p>
+                    <p><span class="icon">📞</span> <strong>Hotline:</strong> (84)24.36.280.280</p>
+                </div>
+                
+                <h3>Kết nối với chúng tôi</h3>
+                <div style="margin-top: 15px;">
+                    <a href="https://www.facebook.com/ktqdNEU" class="social-link">
+                        <span class="icon">f</span> Fanpage Facebook
+                    </a>
+                    <a href="https://www.facebook.com/ktqdNEU" class="social-link" style="background-color: #0084ff;">
+                        <span class="icon">m</span> Messenger
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="support-card animate-fadeIn">
+                <h2 class="section-title">Đặt Câu Hỏi</h2>
+                <div class="comment-form">
+                    <form id="commentForm">
+                        <textarea class="form-control" rows="3" placeholder="Nhập câu hỏi của bạn..." required></textarea>
+                        <div style="display: flex; gap: 15px;">
+                            <input type="text" class="form-control" placeholder="Họ và tên" required>
+                            <input type="email" class="form-control" placeholder="Email để nhận phản hồi" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Gửi câu hỏi</button>
+                    </form>
+                </div>
+                
+                <div class="comments-section">
+                    <h3>Câu hỏi gần đây</h3>
+                    
+                    <!-- Comment 1 -->
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">
+                                <img src="/stupid-b-svgrepo-com.svg" alt="Avatar">
+                            </div>
+                            <div class="comment-author">Nguyễn Văn A</div>
+                            <div class="comment-time">2 giờ trước</div>
+                        </div>
+                        <div class="comment-text">
+                            Làm thế nào để đăng ký học cùng lúc 2 chuyên ngành? Em đang học chuyên ngành Marketing nhưng muốn đăng ký thêm chuyên ngành Kinh doanh quốc tế.
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">Thích</div>
+                            <div class="comment-action">Trả lời</div>
+                        </div>
+                        
+                        <!-- Reply -->
+                        <div class="comment" style="margin-left: 40px; padding-left: 15px; border-left: 2px solid #ddd;">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="/logoneu.jpg" alt="Admin">
+                                </div>
+                                <div class="comment-author">Admin Phòng Đào Tạo</div>
+                                <div class="comment-time">1 giờ trước</div>
+                            </div>
+                            <div class="comment-text">
+                                Chào bạn, để đăng ký học cùng lúc 2 chuyên ngành, bạn cần làm đơn gửi lên Khoa quản lý và được sự chấp thuận. Bạn có thể liên hệ trực tiếp qua email daotao@neu.edu.vn để được hướng dẫn chi tiết về quy trình và điều kiện.
+                            </div>
+                            <div class="comment-actions">
+                                <div class="comment-action">Thích</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 2 -->
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">
+                                <img src="/poisoned-svgrepo-com.svg" alt="Avatar">
+                            </div>
+                            <div class="comment-author">Trần Thị B</div>
+                            <div class="comment-time">5 giờ trước</div>
+                        </div>
+                        <div class="comment-text">
+                            Em bị trùng lịch học giữa 2 môn bắt buộc. Làm thế nào để giải quyết ạ?
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">Thích</div>
+                            <div class="comment-action">Trả lời</div>
+                        </div>
+                        
+                        <!-- Reply -->
+                        <div class="comment" style="margin-left: 40px; padding-left: 15px; border-left: 2px solid #ddd;">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="/logoneu.jpg" alt="Admin">
+                                </div>
+                                <div class="comment-author">Admin Hệ Thống</div>
+                                <div class="comment-time">4 giờ trước</div>
+                            </div>
+                            <div class="comment-text">
+                                Chào bạn, trong trường hợp trùng lịch giữa các môn bắt buộc, bạn cần liên hệ với cố vấn học tập hoặc phòng đào tạo để được hỗ trợ đăng ký vào nhóm học phần khác hoặc xin phép học trong học kỳ tiếp theo nếu điều kiện cho phép.
+                            </div>
+                            <div class="comment-actions">
+                                <div class="comment-action">Thích</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Comment 3 -->
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-avatar">
+                                <img src="/fear-1-svgrepo-com.svg" alt="Avatar">
+                            </div>
+                            <div class="comment-author">Lê Văn C</div>
+                            <div class="comment-time">1 ngày trước</div>
+                        </div>
+                        <div class="comment-text">
+                            Tôi không thể đăng nhập vào hệ thống. Báo lỗi "Tài khoản không tồn tại" mặc dù tôi đã kiểm tra kỹ thông tin đăng nhập.
+                        </div>
+                        <div class="comment-actions">
+                            <div class="comment-action">Thích</div>
+                            <div class="comment-action">Trả lời</div>
+                        </div>
+                        
+                        <!-- Reply -->
+                        <div class="comment" style="margin-left: 40px; padding-left: 15px; border-left: 2px solid #ddd;">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="/logoneu.jpg" alt="Admin">
+                                </div>
+                                <div class="comment-author">Admin Kỹ Thuật</div>
+                                <div class="comment-time">1 ngày trước</div>
+                            </div>
+                            <div class="comment-text">
+                                Chào bạn, có thể tài khoản của bạn đã bị khóa do nhập sai mật khẩu nhiều lần hoặc do chưa thanh toán học phí. Vui lòng gửi email đến support@neu.edu.vn kèm theo thông tin cá nhân để được hỗ trợ khôi phục tài khoản.
+                            </div>
+                            <div class="comment-actions">
+                                <div class="comment-action">Thích</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Về Chúng Tôi</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem;">Hệ thống đăng ký tín chỉ trực tuyến của Đại học Kinh Tế Quốc Dân</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ktqdNEU" class="social-link">f</a>
+                        <a href="https://www.youtube.com/channel/UC3ycBDQzKIWXlRw5M3HN9KQ" class="social-link">yt</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="homepage.html">Trang chủ</a></li>
+                        <li><a href="noti.html">Lịch đăng ký</a></li>
+                        <li><a href="courselist.html">Danh sách môn học</a></li>
+                        <li><a href="fee.html">Tra cứu học phí</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Hệ</h3>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Địa chỉ: 207 Giải Phóng, Đồng Tâm, Quận Hai Bà Trưng, Hà Nội</p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Email: dhktqd@neu.edu.vn</p>
+                    <p style="color: #ccc;">Hotline: (84)24.36.280.280</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hệ Thống Đăng Ký Tín Chỉ - Đại Học Kinh Tế Quốc Dân</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Form submission handling
+        document.getElementById('commentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Cảm ơn bạn đã gửi câu hỏi. Chúng tôi sẽ phản hồi qua email trong thời gian sớm nhất!');
+            this.reset();
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fadeIn');
+            
+            function checkIfInView() {
+                const windowHeight = window.innerHeight;
+                const windowTopPosition = window.scrollY;
+                const windowBottomPosition = (windowTopPosition + windowHeight);
+                
+                animatedElements.forEach(function(element) {
+                    const elementHeight = element.offsetHeight;
+                    const elementTopPosition = element.getBoundingClientRect().top + windowTopPosition;
+                    const elementBottomPosition = (elementTopPosition + elementHeight);
+                    
+                    // Check if element is in view
+                    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            }
+            
+            // Set initial state
+            animatedElements.forEach(function(element) {
+                element.style.opacity = 0;
+                element.style.animationPlayState = 'paused';
+            });
+            
+            // Check on load
+            checkIfInView();
+            
+            // Check on scroll
+            window.addEventListener('scroll', checkIfInView);
+        });
+    </script>
+</body>
+</html>

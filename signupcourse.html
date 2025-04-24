@@ -4,60 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Đăng ký học phần</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --blue: #d0e8ff;
+      --primary: #1a73e8;
+      --primary-light: #e8f0fe;
+      --primary-dark: #0d47a1;
+      --secondary: #34a853;
+      --danger: #ea4335;
+      --gray: #f5f5f5;
+      --text: #202124;
       --white: #ffffff;
-      --dark-blue: #004d80;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: var(--blue);
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, rgba(230, 240, 255, 0.8), rgba(240, 250, 255, 0.8)), 
+                  url('https://congchungnguyenhue.com/Uploaded/Images/Original/2023/10/27/neu_2710105005.jpg') center/cover fixed;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .page-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      padding-bottom: 20px;
     }
 
     h1 {
-      color: var(--dark-blue);
+      color: var(--primary-dark);
+      margin: 0;
+      font-size: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h1 i {
+      color: var(--primary);
     }
 
     .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: var(--dark-blue);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s ease;
-        }
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background-color: var(--white);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      border: 1px solid var(--primary);
+      transition: var(--transition);
+    }
+
+    .btn-back:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-2px);
+    }
 
     .container {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 30px;
     }
 
     .box {
       background-color: var(--white);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      flex: 1;
-      min-width: 300px;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
     .box h2 {
-      margin-bottom: 15px;
-      color: var(--dark-blue);
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: var(--primary);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .course-list {
@@ -67,84 +112,290 @@
     }
 
     .course-list li {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      padding: 12px;
+      border-radius: 8px;
+      background-color: var(--gray);
+      transition: var(--transition);
+    }
+
+    .course-list li:hover {
+      background-color: var(--primary-light);
+    }
+
+    .course-list label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .credit-badge {
+      margin-left: auto;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .registered-course {
+      display: flex;
+      align-items: center;
+    }
+
+    .registered-course i {
+      color: var(--secondary);
+      margin-right: 10px;
     }
 
     .btn-submit {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: var(--dark-blue);
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: var(--primary);
       color: var(--white);
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: var(--transition);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-submit:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:active {
+      transform: translateY(1px);
     }
 
     .summary {
-      margin-top: 20px;
+      margin-top: 25px;
       font-weight: bold;
-      color: #333;
+      color: var(--text);
+      padding: 15px;
+      background-color: var(--primary-light);
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      display: none;
+      align-items: center;
+      gap: 10px;
+      z-index: 100;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .highlight {
+      animation: highlight 1s ease-in-out;
+    }
+
+    @keyframes highlight {
+      0% { background-color: var(--primary-light); }
+      50% { background-color: var(--secondary); }
+      100% { background-color: var(--gray); }
     }
 
     @media (max-width: 768px) {
       .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
       }
     }
-
-    body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://congchungnguyenhue.com/Uploaded/Images/Original/2023/10/27/neu_2710105005.jpg') center/cover no-repeat;
-    margin: 0;
-    padding: 20px;
-    }
-
   </style>
 </head>
 <body>
-  <header>
-    <h1>📘 Đăng ký học phần</h1>
-    <a href="homepage.html" class="btn-back">← Quay về trang chủ</a>
-  </header>
+  <div class="page-wrapper">
+    <header>
+      <h1><i class="fas fa-book"></i> Đăng ký học phần</h1>
+      <a href="homepage.html" class="btn-back"><i class="fas fa-arrow-left"></i> Quay về trang chủ</a>
+    </header>
 
-  <div class="container">
-    <!-- Danh sách học phần -->
-    <div class="box">
-      <h2>Danh sách học phần</h2>
-      <form action="#" method="post">
-        <ul class="course-list">
-          <li>
-            <label><input type="checkbox" name="course" value="IT101"> Cơ sở dữ liệu (3 tín chỉ)</label>
+    <div class="container">
+      <!-- Danh sách học phần -->
+      <div class="box">
+        <h2><i class="fas fa-list"></i> Danh sách học phần</h2>
+        <form id="courseForm">
+          <ul class="course-list">
+            <li>
+              <label>
+                <input type="checkbox" name="course" value="IT101" data-name="Cơ sở dữ liệu" data-credits="3"> 
+                <span>Cơ sở dữ liệu</span>
+                <span class="credit-badge">3 tín chỉ</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="course" value="IT202" data-name="Lập trình Web" data-credits="3"> 
+                <span>Lập trình Web</span>
+                <span class="credit-badge">3 tín chỉ</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="course" value="MA101" data-name="Toán rời rạc" data-credits="3"> 
+                <span>Toán rời rạc</span>
+                <span class="credit-badge">3 tín chỉ</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="course" value="IT301" data-name="CTDL & Giải thuật" data-credits="4"> 
+                <span>CTDL & Giải thuật</span>
+                <span class="credit-badge">4 tín chỉ</span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" name="course" value="EN201" data-name="Tiếng Anh học thuật" data-credits="2"> 
+                <span>Tiếng Anh học thuật</span>
+                <span class="credit-badge">2 tín chỉ</span>
+              </label>
+            </li>
+          </ul>
+          <button type="button" class="btn-submit" id="registerBtn">
+            <i class="fas fa-check-circle"></i> Đăng ký học phần
+          </button>
+        </form>
+      </div>
+
+      <!-- Học phần đã đăng ký -->
+      <div class="box" id="registered-box">
+        <h2><i class="fas fa-clipboard-check"></i> Học phần đã đăng ký</h2>
+        <ul class="course-list" id="registeredCourses">
+          <li class="registered-course">
+            <i class="fas fa-check-circle"></i>
+            <span>Cơ sở dữ liệu</span>
+            <span class="credit-badge">3 tín chỉ</span>
           </li>
-          <li>
-            <label><input type="checkbox" name="course" value="IT202"> Lập trình Web (3 tín chỉ)</label>
+          <li class="registered-course">
+            <i class="fas fa-check-circle"></i>
+            <span>Lập trình Web</span>
+            <span class="credit-badge">3 tín chỉ</span>
           </li>
-          <li>
-            <label><input type="checkbox" name="course" value="MA101"> Toán rời rạc (3 tín chỉ)</label>
-          </li>
-          <li>
-            <label><input type="checkbox" name="course" value="IT301"> CTDL & Giải thuật (4 tín chỉ)</label>
-          </li>
-          <li>
-            <label><input type="checkbox" name="course" value="EN201"> Tiếng Anh học thuật (2 tín chỉ)</label>
+          <li class="registered-course">
+            <i class="fas fa-check-circle"></i>
+            <span>Toán rời rạc</span>
+            <span class="credit-badge">3 tín chỉ</span>
           </li>
         </ul>
-        <button type="submit" class="btn-submit" onclick="alert('Đăng ký thành công!')">Đăng ký</button>
-      </form>
-    </div>
-
-    <!-- Lịch sử đăng ký -->
-    <div class="box">
-      <h2>Học phần đã đăng ký</h2>
-      <ul class="course-list">
-        <li>❇️ Cơ sở dữ liệu (3 tín chỉ)</li>
-        <li>❇️ Lập trình Web (3 tín chỉ)</li>
-        <li>❇️ Toán rời rạc (3 tín chỉ)</li>
-      </ul>
-      <div class="summary">
-        Tổng số học phần: 3 | Tổng tín chỉ: 9
+        <div class="summary" id="summary">
+          <span>Tổng số học phần: <strong>3</strong></span>
+          <span>Tổng tín chỉ: <strong>9</strong></span>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span>Đăng ký thành công!</span>
+  </div>
+
+  <script>
+    // Khởi tạo dữ liệu
+    const registeredIds = ['IT101', 'IT202', 'MA101'];
+    let totalCourses = 3;
+    let totalCredits = 9;
+    
+    // DOM Elements
+    const registerBtn = document.getElementById('registerBtn');
+    const registeredList = document.getElementById('registeredCourses');
+    const summary = document.getElementById('summary');
+    const toast = document.getElementById('toast');
+    const registeredBox = document.getElementById('registered-box');
+    
+    // Đánh dấu các khóa học đã đăng ký
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      if (registeredIds.includes(cb.value)) {
+        cb.checked = true;
+        cb.disabled = true;
+      }
+    });
+    
+    // Xử lý đăng ký khóa học
+    registerBtn.addEventListener('click', () => {
+      const selected = [...document.querySelectorAll('input[type="checkbox"]:checked:not(:disabled)')];
+      
+      // Kiểm tra có khóa học được chọn không
+      if (!selected.length) {
+        alert('Vui lòng chọn ít nhất một học phần để đăng ký!');
+        return;
+      }
+      
+      // Thêm các khóa học mới
+      selected.forEach(cb => {
+        // Tạo phần tử khóa học mới
+        const li = document.createElement('li');
+        li.className = 'registered-course highlight';
+        li.innerHTML = `
+          <i class="fas fa-check-circle"></i>
+          <span>${cb.dataset.name}</span>
+          <span class="credit-badge">${cb.dataset.credits} tín chỉ</span>
+        `;
+        
+        // Thêm vào danh sách và vô hiệu hóa checkbox
+        registeredList.appendChild(li);
+        cb.disabled = true;
+        
+        // Cập nhật tổng
+        totalCourses++;
+        totalCredits += parseInt(cb.dataset.credits);
+      });
+      
+      // Cập nhật hiển thị tổng
+      summary.innerHTML = `
+        <span>Tổng số học phần: <strong>${totalCourses}</strong></span>
+        <span>Tổng tín chỉ: <strong>${totalCredits}</strong></span>
+      `;
+      
+      // Hiển thị thông báo
+      toast.style.display = 'flex';
+      setTimeout(() => toast.style.display = 'none', 3000);
+      
+      // Cuộn đến phần học phần đã đăng ký
+      setTimeout(() => registeredBox.scrollIntoView({ behavior: 'smooth' }), 500);
+    });
+  </script>
 </body>
 </html>
