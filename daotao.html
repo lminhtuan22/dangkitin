@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy Chế Đào Tạo - Đại Học Kinh Tế Quốc Dân</title>
+    <style>
+        :root {
+            --primary-color: #005183;
+            --accent-color: #0074b8;
+            --light-gray: #f5f7fa;
+            --border-color: #e0e0e0;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .header {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+
+    .nav-links li {
+        margin-left: 1.5rem;
+    }
+
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.5rem 0;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .nav-links a:hover, 
+    .nav-links a.active {
+        border-color: var(--light-text);
+    }
+
+    .user-actions {
+        display: inline-block;
+        margin-left: 1rem;
+        border-radius: 8px;
+        padding: 8px 12px;
+        background-color: white;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+
+    .btn {
+        background-color: #fff;
+        color: var(--primary-color);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
+    }
+        
+        .content {
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .regulations-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .regulations-section h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .regulations-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .regulations-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .regulations-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0 1rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav {
+                margin-top: 1rem;
+                width: 100%;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .footer-column {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="/logoneu(1).png" alt="Logo Đại học">
+                    <div class="logo-text">HỆ THỐNG ĐĂNG KÝ TÍN CHỈ</div>
+                </div>
+                <div class="nav">
+                    <ul class="nav-links">
+                        <li><a href="homepage.html">Trang chủ</a></li>
+                        <li><a href="noti.html">Lịch đăng ký</a></li>
+                        <li><a href="courselist.html">Danh sách môn học</a></li>
+                        <li><a href="tutorial.html">Hướng dẫn</a></li>
+                        <li><a href="support.html">Hỗ trợ</a></li>
+                        <li><a href="daotao.html" class="active">Đào tạo</a></li>
+                    </ul>
+                    <div>
+                        <a class="user-actions" href="login.html">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="content">
+        <div class="container">
+            <h1>Quy Chế Đào Tạo</h1>
+            
+            <div class="regulations-section">
+                <h2>Quy Định Chung</h2>
+                <ul class="regulations-list">
+                    <li>Đào tạo theo hệ thống tín chỉ, sinh viên tích lũy đủ số tín chỉ theo quy định của chương trình đào tạo sẽ được xét tốt nghiệp.</li>
+                    <li>Mỗi năm học được chia thành 2 học kỳ chính và có thể có học kỳ phụ (học kỳ hè).</li>
+                    <li>Sinh viên phải đăng ký học phần trước mỗi học kỳ theo thời gian quy định của Nhà trường.</li>
+                </ul>
+            </div>
+            
+            <div class="regulations-section">
+                <h2>Đăng Ký Học Phần</h2>
+                <ul class="regulations-list">
+                    <li>Sinh viên phải đăng ký tối thiểu 14 tín chỉ và tối đa 24 tín chỉ trong một học kỳ chính.</li>
+                    <li>Sinh viên có thể đăng ký tối đa 8 tín chỉ trong học kỳ phụ.</li>
+                    <li>Sinh viên phải hoàn thành việc đăng ký học phần theo lịch của Nhà trường.</li>
+                    <li>Có thể điều chỉnh đăng ký học phần trong thời gian quy định.</li>
+                </ul>
+            </div>
+            
+            <div class="regulations-section">
+                <h2>Đánh Giá Kết Quả Học Tập</h2>
+                <ul class="regulations-list">
+                    <li>Điểm đánh giá học phần bao gồm: điểm quá trình (30-50%) và điểm thi kết thúc học phần (50-70%).</li>
+                    <li>Thang điểm đánh giá: Thang điểm 10 và được quy đổi sang thang điểm chữ (A, B, C, D, F).</li>
+                    <li>Điểm trung bình học kỳ và điểm trung bình tích lũy được tính theo hệ số tín chỉ.</li>
+                    <li>Sinh viên đạt điểm F phải đăng ký học lại học phần đó.</li>
+                </ul>
+            </div>
+            
+            <div class="regulations-section">
+                <h2>Xét Tốt Nghiệp</h2>
+                <ul class="regulations-list">
+                    <li>Sinh viên được xét tốt nghiệp khi tích lũy đủ số tín chỉ theo quy định của chương trình đào tạo.</li>
+                    <li>Điểm trung bình tích lũy toàn khóa học đạt từ 2.00 trở lên (theo thang điểm 4).</li>
+                    <li>Hoàn thành các học phần điều kiện và không bị kỷ luật từ mức đình chỉ học tập trở lên.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="footer-title">Về Chúng Tôi</h3>
+                    <p style="color: #ccc; margin-bottom: 1rem;">Hệ thống đăng ký tín chỉ trực tuyến của Đại học Kinh Tế Quốc Dân, giúp sinh viên dễ dàng đăng ký học phần một cách nhanh chóng và thuận tiện.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ktqdNEU" class="social-link">f</a>
+                        <a href="#" class="social-link">in</a>
+                        <a href="#" class="social-link">yt</a>
+                        <a href="#" class="social-link">tw</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Kết Nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="homepage.html">Trang chủ</a></li>
+                        <li><a href="noti.html">Lịch đăng ký</a></li>
+                        <li><a href="courselist.html">Danh sách môn học</a></li>
+                        <li><a href="fee.html">Tra cứu học phí</a></li>
+                        <li><a href="tutorial.html">Hỏi đáp thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Hỗ Trợ Sinh Viên</h3>
+                    <ul class="footer-links">
+                        <li><a href="tutorial.html">Hướng dẫn đăng ký</a></li>
+                        <li><a href="support.html">Hỗ trợ kỹ thuật</a></li>
+                        <li><a href="support.html">Liên hệ phòng đào tạo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Liên Hệ</h3>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Địa chỉ: 207 Giải Phóng, Đồng Tâm, Quận Hai Bà Trưng, Hà Nội, Việt Nam</p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Email: dhktqd@neu.edu.vn</p>
+                    <p style="color: #ccc; margin-bottom: 0.5rem;">Điện thoại: (84)24.38.695.992</p>
+                    <p style="color: #ccc;">Hotline: (84)24.36.280.280</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hệ Thống Đăng Ký Tín Chỉ - Đại Học Kinh Tế Quốc Dân. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
