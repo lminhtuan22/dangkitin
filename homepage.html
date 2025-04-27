@@ -236,6 +236,49 @@
             document.getElementById('mainNav').classList.toggle('active');
         });
 
+        document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.nav');
+        const body = document.body;
+        
+        // Create menu overlay element
+        const menuOverlay = document.createElement('div');
+        menuOverlay.className = 'menu-overlay';
+        document.body.appendChild(menuOverlay);
+        
+        navToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking outside
+        menuOverlay.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+        });
+        
+        // Close menu when window is resized to desktop size
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+            nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+            }
+        });
+        
+        // Handle touch events for mobile devices
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            body.style.overflow = '';
+            });
+        });
+        });
+
         // Animation on scroll
         document.addEventListener('DOMContentLoaded', function() {
             const animatedElements = document.querySelectorAll('.animate-fadeIn');
@@ -269,6 +312,8 @@
             // Check on scroll
             window.addEventListener('scroll', checkIfInView);
         });
+
+    
     </script>
 </body>
 </html>
