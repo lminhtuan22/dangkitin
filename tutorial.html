@@ -186,125 +186,74 @@
             font-style: italic;
         }
 
-    /* Improved Mobile Responsiveness */
+    /* Fixed Mobile Menu CSS */
 
-/* Base Mobile Navigation */
+/* Basic Mobile Menu Structure */
 @media (max-width: 768px) {
     .nav-toggle {
         display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
         position: absolute;
         right: 15px;
         top: 15px;
+        z-index: 200;
     }
     
     .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.5rem 0;
         position: relative;
     }
     
-    .logo {
-        margin-bottom: 0;
-        padding-right: 50px; /* Make room for toggle button */
-    }
-    
     .nav {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        height: 100vh;
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
         background-color: var(--primary-color);
-        transition: left 0.3s ease;
-        z-index: 999;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-        margin-top: 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+        z-index: 100;
     }
     
     .nav.active {
-        left: 0;
-        height: 100vh;
-        overflow-y: auto;
+        display: block; /* Show when active */
     }
     
     .nav-links {
         flex-direction: column;
         width: 100%;
-        padding: 1rem;
+        padding: 0;
+        margin: 0;
     }
     
     .nav-links li {
-        margin-left: 0;
-        margin-bottom: 0.8rem;
+        margin: 0;
         width: 100%;
+        text-align: left;
     }
     
     .nav-links a {
         display: block;
-        padding: 0.5rem;
-        border-left: 3px solid transparent;
-        border-bottom: none;
+        padding: 0.8rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: none;
     }
     
     .nav-links a:hover, 
     .nav-links a.active {
-        border-left: 3px solid white;
-        border-bottom: none;
         background-color: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: none;
     }
     
     .user-actions {
-        margin: 1rem;
         display: block;
+        margin: 1rem 1.5rem;
         text-align: center;
-        width: calc(100% - 2rem);
-    }
-    
-    /* Mobile overlay when menu is open */
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 998;
-    }
-    
-    .menu-overlay.active {
-        display: block;
-    }
-}
-
-/* Small Devices */
-@media (max-width: 576px) {
-    .container {
-        width: 95%;
-        padding: 0 10px;
-    }
-    
-    h1 {
-        font-size: 1.8rem;
-    }
-    
-    .regulations-section {
-        padding: 1rem;
-    }
-    
-    .regulations-section h2 {
-        font-size: 1.3rem;
-    }
-    
-    .regulations-list li {
-        padding: 0.6rem 0;
-        font-size: 0.95rem;
-    }
-    
-    .btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
     }
 }
 
@@ -803,64 +752,53 @@
     </footer>
 
     <script>
-        // Toggle mobile menu
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-        // If nav-toggle element doesn't exist, create it
-        let navToggle = document.querySelector('.nav-toggle');
-        if (!navToggle) {
-            navToggle = document.createElement('button');
-            navToggle.className = 'nav-toggle';
+        // Simple and reliable mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if toggle button exists, if not create it
+    let navToggle = document.querySelector('.nav-toggle');
+    if (!navToggle) {
+        navToggle = document.createElement('button');
+        navToggle.className = 'nav-toggle';
+        navToggle.innerHTML = '☰';
+        const headerContent = document.querySelector('.header-content');
+        headerContent.appendChild(navToggle);
+    }
+    
+    const nav = document.querySelector('.nav');
+    
+    // Toggle menu display
+    navToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        nav.classList.toggle('active');
+        
+        // Change the toggle icon
+        if (nav.classList.contains('active')) {
+            navToggle.innerHTML = '✕';
+        } else {
             navToggle.innerHTML = '☰';
-            document.querySelector('.header-content').appendChild(navToggle);
         }
-        
-        const nav = document.querySelector('.nav');
-        
-        // Create menu overlay if it doesn't exist
-        let menuOverlay = document.querySelector('.menu-overlay');
-        if (!menuOverlay) {
-            menuOverlay = document.createElement('div');
-            menuOverlay.className = 'menu-overlay';
-            document.body.appendChild(menuOverlay);
-        }
-        
-        // Toggle navigation menu
-        navToggle.addEventListener('click', function() {
-            nav.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        // Close menu when clicking on overlay
-        menuOverlay.addEventListener('click', function() {
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
             nav.classList.remove('active');
-            menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // Close menu when clicking on a navigation link
-        const navLinks = document.querySelectorAll('.nav-links a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                nav.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
-        
-        // Reset menu when window is resized
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768) {
-                nav.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            }
+            navToggle.innerHTML = '☰';
         });
     });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            navToggle.innerHTML = '☰';
+        }
+    });
+});
 
         // Tab functionality
         document.addEventListener('DOMContentLoaded', function() {
