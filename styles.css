@@ -618,3 +618,194 @@ body {
         flex: 100%;
     }
 }
+
+/* Enhanced Mobile Responsiveness */
+
+/* Better Responsive Typography */
+@media (max-width: 768px) {
+    body {
+      font-size: 15px;
+    }
+    
+    .hero-title {
+      font-size: 1.8rem;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Small Mobile Devices */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+    
+    .container {
+      width: 95%;
+      padding: 0 10px;
+    }
+    
+    .hero-title {
+      font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 0.9rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    
+    .feature-card {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Improved Navigation Menu */
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+    
+    .nav {
+      position: fixed;
+      top: 70px;
+      left: -100%;
+      width: 80%;
+      height: 100vh;
+      background-color: var(--primary-color);
+      transition: left 0.3s ease;
+      z-index: 999;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav.active {
+      left: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+    
+    .nav-links li {
+      margin: 0.8rem 0;
+      width: 100%;
+      text-align: left;
+    }
+    
+    .nav-links a {
+      display: block;
+      padding: 0.5rem 1rem;
+      border-left: 3px solid transparent;
+      border-bottom: none;
+    }
+    
+    .nav-links a:hover, 
+    .nav-links a.active {
+      border-left: 3px solid var(--light-text);
+      border-bottom: none;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .user-actions {
+      margin: 1rem;
+      display: block;
+      text-align: center;
+    }
+    
+    /* Mobile overlay when menu is open */
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+    }
+    
+    .menu-overlay.active {
+      display: block;
+    }
+  }
+  
+  /* Flex & Grid Improvements */
+  @media (max-width: 768px) {
+    .features-grid,
+    .news-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .registration-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .footer-content {
+      gap: 1.5rem;
+    }
+    
+    .footer-column {
+      flex: 100%;
+    }
+  }
+  
+  /* Form Improvements */
+  @media (max-width: 576px) {
+    .form-control,
+    .form-select {
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+    
+    .registration-form {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Images Responsive Handling */
+  @media (max-width: 768px) {
+    .hero-image img {
+      max-width: 90%;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .news-image {
+      height: 180px;
+    }
+  }
+  
+  /* Touch Optimizations */
+  @media (max-width: 768px) {
+    .btn,
+    .form-control,
+    .form-select,
+    .nav-links a,
+    .social-link {
+      min-height: 44px; /* Minimum touch target size */
+    }
+    
+    .nav-links li,
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  }
