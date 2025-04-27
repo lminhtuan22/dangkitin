@@ -148,6 +148,77 @@
         .comment-action:hover {
             color: #1a73e8;
         }
+
+    /* Fixed Mobile Menu CSS */
+
+/* Basic Mobile Menu Structure */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 200;
+    }
+    
+    .header-content {
+        position: relative;
+    }
+    
+    .nav {
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0;
+        z-index: 100;
+    }
+    
+    .nav.active {
+        display: block; /* Show when active */
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: none;
+    }
+    
+    .nav-links a:hover, 
+    .nav-links a.active {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: none;
+    }
+    
+    .user-actions {
+        display: block;
+        margin: 1rem 1.5rem;
+        text-align: center;
+    }
+}
     </style>
 </head>
 <body>
@@ -371,51 +442,53 @@
     </footer>
 
     <script>
-        // Toggle mobile menu
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('mainNav').classList.toggle('active');
+        // Simple and reliable mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if toggle button exists, if not create it
+    let navToggle = document.querySelector('.nav-toggle');
+    if (!navToggle) {
+        navToggle = document.createElement('button');
+        navToggle.className = 'nav-toggle';
+        navToggle.innerHTML = '☰';
+        const headerContent = document.querySelector('.header-content');
+        headerContent.appendChild(navToggle);
+    }
+    
+    const nav = document.querySelector('.nav');
+    
+    // Toggle menu display
+    navToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        nav.classList.toggle('active');
+        
+        // Change the toggle icon
+        if (nav.classList.contains('active')) {
+            navToggle.innerHTML = '✕';
+        } else {
+            navToggle.innerHTML = '☰';
+        }
+    });
+    
+    // Close menu when clicking on links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+            navToggle.innerHTML = '☰';
         });
-
-        // Form submission handling
-        document.getElementById('commentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Cảm ơn bạn đã gửi câu hỏi. Chúng tôi sẽ phản hồi qua email trong thời gian sớm nhất!');
-            this.reset();
-        });
-
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.animate-fadeIn');
-            
-            function checkIfInView() {
-                const windowHeight = window.innerHeight;
-                const windowTopPosition = window.scrollY;
-                const windowBottomPosition = (windowTopPosition + windowHeight);
-                
-                animatedElements.forEach(function(element) {
-                    const elementHeight = element.offsetHeight;
-                    const elementTopPosition = element.getBoundingClientRect().top + windowTopPosition;
-                    const elementBottomPosition = (elementTopPosition + elementHeight);
-                    
-                    // Check if element is in view
-                    if ((elementBottomPosition >= windowTopPosition) && (elementTopPosition <= windowBottomPosition)) {
-                        element.style.animationPlayState = 'running';
-                    }
-                });
-            }
-            
-            // Set initial state
-            animatedElements.forEach(function(element) {
-                element.style.opacity = 0;
-                element.style.animationPlayState = 'paused';
-            });
-            
-            // Check on load
-            checkIfInView();
-            
-            // Check on scroll
-            window.addEventListener('scroll', checkIfInView);
-        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnToggle = navToggle.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnToggle && nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            navToggle.innerHTML = '☰';
+        }
+    });
+});
     </script>
 </body>
 </html>
